@@ -15,9 +15,18 @@ form.addEventListener('submit', e => {
     })
     // Return to top after submit
     scrollTo(0, 0)
-    // Update and display the score
-    result.querySelector('span').textContent = `${score}%`
     result.classList.remove('d-none')
 
+
+    let output = 0
+    const timer = setInterval(() => {
+        result.querySelector('span').textContent = `${output}%`
+        if (output === score) {
+            clearInterval(timer)
+        } else {
+            output++
+        }
+
+    }, 10)
 
 })
