@@ -13,6 +13,9 @@ form.addEventListener('submit', e => {
             score += 25
         }
     })
+    // Return to top after submit
+    scrollTo(0, 0)
+    // Update and display the score
     result.querySelector('span').textContent = `${score}%`
     result.classList.remove('d-none')
 
